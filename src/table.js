@@ -1,15 +1,15 @@
 import React from 'react';
 import Button from './button';
 
-//const isSearched = (searchTerm) => (item) => !searchTerm || item.title.toLowerCase().includes(searchTerm.toLowerCase());
-function isSearched(searchTerm) {
-	return function(item) {
-		return !searchTerm ||
-			item.title.toLowerCase().includes(searchTerm.toLowerCase());
-	}
-}
+// const isSearched = (searchTerm) => (item) => !searchTerm || item.title.toLowerCase().includes(searchTerm.toLowerCase());
+// function isSearched(searchTerm) {
+// 	return function(item) {
+// 		return !searchTerm ||
+// 			item.title.toLowerCase().includes(searchTerm.toLowerCase());
+// 	}
+// }
 
-const Table = ({ list, pattern, onDismiss }) => {
+const Table = ({ list, onDismiss }) => {
 	return (
 		<div className="col-md-8">
 			<table className="table table-striped" >
@@ -23,7 +23,7 @@ const Table = ({ list, pattern, onDismiss }) => {
 							</tr>
 						</thead> 
 					<tbody>
-					{ list.filter(isSearched(pattern)).map(item =>
+					{ list.map(item =>
 						<tr key={item.objectID}>
 						<td>
 							<a href={item.url}>{item.title}</a>
